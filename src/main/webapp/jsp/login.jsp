@@ -9,12 +9,7 @@
                 Login Failed!!!<br />
                 Reason : ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
          </div>
-    </c:if>
-    <c:if test="${'logout' eq param.auth}">
-        <div style="color:red">
-                You are logged out.
-         </div>
-    </c:if>
+   </c:if>
    <form name='f' action="j_spring_security_check" method='POST'>
       <table>
          <tr>
