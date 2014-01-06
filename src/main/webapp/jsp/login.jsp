@@ -10,6 +10,11 @@
                 Reason : ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
          </div>
     </c:if>
+    <c:if test="${'logout' eq param.auth}">
+        <div style="color:red">
+                You are logged out.
+         </div>
+    </c:if>
    <form name='f' action="j_spring_security_check" method='POST'>
       <table>
          <tr>
@@ -21,7 +26,7 @@
             <td><input type='password' name='j_password' /></td>
          </tr>
          <tr>
-            <td><input name="submit" type="submit" value="submit" /></td>
+            <td><input name="submit" type="submit" value="Submit" /></td>
          </tr>
       </table>
   </form>
