@@ -15,6 +15,8 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class LogoutController {
 
+    private static final String LOGOUT_PAGE = "logout";
+
     /**
      * The default controller action for the logout page.
      * 
@@ -22,7 +24,7 @@ public class LogoutController {
      */
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public ModelAndView logout(ModelMap model) {
-        ModelAndView mAndV = new ModelAndView("logout");
+        ModelAndView mAndV = new ModelAndView(LOGOUT_PAGE);
         return mAndV;
     }
 

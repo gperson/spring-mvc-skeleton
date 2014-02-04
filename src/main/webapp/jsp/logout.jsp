@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>You successfully logout out.</h1>
+	<h1>You successfully logged out.</h1>
 	<a href=/login >Return to login page.</a>
 </body>
 </html>

@@ -15,6 +15,8 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class LoginController {
 
+    private static final String LOGIN_PAGE = "login";
+
     /**
      * The default controller action for the login page.
      * 
@@ -22,7 +24,7 @@ public class LoginController {
      */
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public ModelAndView login(ModelMap model) {
-        ModelAndView mAndV = new ModelAndView("login");
+        ModelAndView mAndV = new ModelAndView(LOGIN_PAGE);
         return mAndV;
     }
 }

@@ -5,7 +5,7 @@
 </head>
 <body>
 	<h1>Under Construction!!!</h1>
-	<h3>Hello, ${message}.</h3>
+	<h3>Hello, ${username}.</h3>
 	<table>
 		<c:forEach var="bean" items="${test}">
 			<tr>

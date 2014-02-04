@@ -19,7 +19,10 @@ import com.xpanxion.skeleton.service.TestService;
 @Controller
 public class HomeController {
 
+    private static final String USER_NAME = "username";
+    private static final String HOME_PAGE = "home";
     private TestService testService;
+    private Authentication authentication;
 
     /**
      * The default controller action for the home page.
@@ -28,12 +31,12 @@ public class HomeController {
      */
     @RequestMapping("**/home")
     public ModelAndView getHomePage() {
-        ModelAndView mAndV = new ModelAndView("home");
+        ModelAndView mAndV = new ModelAndView(HOME_PAGE);
         mAndV.addObject("test", this.testService.getTestBeans());
 
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String name = authentication.getName();
-        mAndV.addObject("message", name);
+        this.authentication = SecurityContextHolder.getContext().getAuthentication();
+        String name = this.authentication.getName();
+        mAndV.addObject(USER_NAME, name);
 
         return mAndV;
     }
