@@ -1,0 +1,7 @@
+html * {  font-family: Arial !important;}
+nav { height: 25px}
+
+#wrapper{ width: 1024px; height: 100%; margin: 0px auto;}
+#header{ text-align: center;}
+#current_user{ float: right;}
+#main_content{ }

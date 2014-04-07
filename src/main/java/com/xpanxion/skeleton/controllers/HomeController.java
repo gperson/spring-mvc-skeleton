@@ -29,7 +29,7 @@ public class HomeController {
      * 
      * @return the Model and View for the home page.
      */
-    @RequestMapping("**/home")
+    @RequestMapping("/home")
     public ModelAndView getHomePage() {
         ModelAndView mAndV = new ModelAndView(HOME_PAGE);
         mAndV.addObject("test", this.testService.getTestBeans());
