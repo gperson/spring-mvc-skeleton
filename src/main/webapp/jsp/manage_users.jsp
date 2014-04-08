@@ -11,10 +11,10 @@
 		</div>
 		<div id="main_content" class="primaryColor">
 			<h3>User Information</h3>
-			<div id="username">Username: </div>
-			<div id="password">Password: </div>
-			<div id="authority">Authority: </div>
-			<div id="enabled">Enabled: </div>
+			<div id="username">Username: ${user}</div>
+			<div id="password">Password: ${password}</div>
+			<div id="authority">Authority: ${authority}</div>
+			<div id="enabled">Enabled: ${enabled}</div>
 		</div>
 	</div>
 </body>

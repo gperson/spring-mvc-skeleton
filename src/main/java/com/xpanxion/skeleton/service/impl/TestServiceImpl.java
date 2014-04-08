@@ -1,4 +1,4 @@
-package com.xpanxion.skeleton.service;
+package com.xpanxion.skeleton.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.xpanxion.skeleton.dao.TestDao;
 import com.xpanxion.skeleton.dto.beans.TestBean;
 import com.xpanxion.skeleton.dto.entity.TestEntity;
+import com.xpanxion.skeleton.service.TestService;
 
 /**
  * Implementation of the test service interface. 

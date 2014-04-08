@@ -28,10 +28,10 @@
 				data-source-ref="dataSource"
 				users-by-username-query='
 		      		SELECT username,password,enabled 
-		      		FROM "user-info" WHERE username = ?;'
+		      		FROM "users" WHERE username = ?;'
 
 				authorities-by-username-query='
-		      		SELECT username, authority FROM "user-info" 
+		      		SELECT username, authority FROM "users" 
 		      		WHERE  username = ?  ' />
 		</security:authentication-provider>
 	</security:authentication-manager>

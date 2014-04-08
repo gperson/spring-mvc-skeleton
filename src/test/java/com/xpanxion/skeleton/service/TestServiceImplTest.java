@@ -18,7 +18,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 import com.xpanxion.skeleton.dao.TestDao;
 import com.xpanxion.skeleton.dto.beans.TestBean;
 import com.xpanxion.skeleton.dto.entity.TestEntity;
-import com.xpanxion.skeleton.service.TestServiceImpl;
+import com.xpanxion.skeleton.service.impl.TestServiceImpl;
 
 /**
  * @author brian
@@ -34,7 +34,7 @@ public class TestServiceImplTest {
     private TestDao testDao;
 
     /**
-     * Test method for {@link com.xpanxion.skeleton.service.TestServiceImpl#getTestBeans()}.
+     * Test method for {@link com.xpanxion.skeleton.service.impl.TestServiceImpl#getTestBeans()}.
      */
     @Test
     public void testGetTestBeans() {

@@ -5,11 +5,11 @@
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
 
 	<changeSet author="Grant Person" id="create-user-info">
-		<createTable tableName="user-info">
+		<createTable tableName="users">
 			<column name="username" type="varchar(20)">
 				<constraints primaryKey="true" nullable="false" />
 			</column>
-			<column name="password" type="varchar(20)">
+			<column name="password" type="varchar(100)">
 				<constraints nullable="false" />
 			</column>
 			<column name="enabled" type="boolean">

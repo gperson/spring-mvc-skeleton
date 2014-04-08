@@ -35,8 +35,7 @@ public class HomeController {
         mAndV.addObject("test", this.testService.getTestBeans());
 
         this.authentication = SecurityContextHolder.getContext().getAuthentication();
-        String name = this.authentication.getName();
-        mAndV.addObject(USER_NAME, name);
+        mAndV.addObject(USER_NAME, this.authentication.getName());
 
         return mAndV;
     }
