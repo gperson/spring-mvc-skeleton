@@ -1,5 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
 <title>Manage Users</title>
@@ -12,13 +11,13 @@
 		</div>
 		<div id="main_content" class="primaryColor">
 			<h3>User Information</h3>
-			<form:form>
+			<form>
 			<div>Username: <input id="username" value=${user}></div>
 			<div>Password: <input id="password" type="password" value=${password}></div>
 			<div>Authority: <input id="authority" value=${authority}></div>
 			<div>Enabled: <input id="enabled" value=${enabled}></div>
 			<div><input id="update" type="button" value="Update"></div>
-			</form:form>
+			</form>
 		</div>
 	</div>
 </body>
