@@ -32,6 +32,7 @@ public class FunnyCar extends Car {
     @Override
     public void initialize() {
         this.setFuelUsedToDrive(14);
+        this.setImage(IMAGES + "funny.jpg");
         this.setFuel(FuelType.METHANOL);
         this.setCarType(CarType.FUNNYCAR);
     }

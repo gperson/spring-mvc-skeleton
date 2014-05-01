@@ -1,7 +1,7 @@
 package com.xpanxion.skeleton.dto.beans;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.xpanxion.skeleton.dto.beans.enums.CarType;
 import com.xpanxion.skeleton.dto.entity.CarEntity;
@@ -10,14 +10,14 @@ import com.xpanxion.skeleton.dto.entity.LotEntity;
 public class Lot {
 
     private int id;
-    private Set<Car> cars;
+    private List<Car> cars;
 
     public Lot() {
 
     }
 
     public Lot(LotEntity lot) {
-        Set<Car> cars = new HashSet<Car>();
+        List<Car> cars = new ArrayList<Car>();
         for (CarEntity carEntity : lot.getCars()) {
             Car car = null;
             if (carEntity.getCarType() == CarType.FUNNYCAR) {
@@ -33,7 +33,7 @@ public class Lot {
         this.id = lot.getId();
     }
 
-    public Set<Car> getCars() {
+    public List<Car> getCars() {
         return this.cars;
     }
 
@@ -41,7 +41,7 @@ public class Lot {
         return this.id;
     }
 
-    public void setCars(Set<Car> cars) {
+    public void setCars(List<Car> cars) {
         this.cars = cars;
     }
 

@@ -1,5 +1,7 @@
 package com.xpanxion.skeleton.controllers;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.security.core.Authentication;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.xpanxion.skeleton.dto.beans.Car;
 import com.xpanxion.skeleton.service.LotService;
 
 /**
@@ -25,7 +28,6 @@ public class HomeController {
     private static final String LOT = "lot";
 
     private LotService lotService;
-    // private CarService carService;
 
     private Authentication authentication;
 
@@ -39,21 +41,10 @@ public class HomeController {
         ModelAndView mAndV = new ModelAndView(HOME_PAGE);
         this.authentication = SecurityContextHolder.getContext().getAuthentication();
         mAndV.addObject(USER_NAME, this.authentication.getName());
-        mAndV.addObject(LOT, this.lotService.getLot());
+        List<Car> cars = this.lotService.getLot().getCars();
+        mAndV.addObject(LOT, cars);
         return mAndV;
     }
-
-    @RequestMapping(value = "/" + HOME_PAGE, method = RequestMethod.POST)
-    public ModelAndView postHomePage() {
-        ModelAndView mAndV = new ModelAndView(HOME_PAGE);
-        // TODO this.carService.addOrSaveCar(lot, car, isHybrid);
-        return mAndV;
-    }
-
-    // @Resource
-    // public void setCarService(CarService service) {
-    // this.carService = service;
-    // }
 
     @Resource
     public void setLotService(LotService service) {

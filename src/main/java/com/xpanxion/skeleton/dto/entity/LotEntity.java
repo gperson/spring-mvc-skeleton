@@ -1,6 +1,6 @@
 package com.xpanxion.skeleton.dto.entity;
 
-import java.util.Set;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,13 +20,13 @@ public class LotEntity {
 
     @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "lotId")
-    private Set<CarEntity> cars;
+    private List<CarEntity> cars;
 
     @Id
     @Column
     private int id;
 
-    public Set<CarEntity> getCars() {
+    public List<CarEntity> getCars() {
         return this.cars;
     }
 
@@ -34,7 +34,7 @@ public class LotEntity {
         return this.id;
     }
 
-    public void setCars(Set<CarEntity> cars) {
+    public void setCars(List<CarEntity> cars) {
         this.cars = cars;
     }
 

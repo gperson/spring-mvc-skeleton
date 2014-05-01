@@ -7,7 +7,7 @@
 <link rel="stylesheet" type="text/css" href="/resources/css/home.css">
 <link rel="stylesheet" type="text/css" href="/resources/css/common.css">
 <link rel="stylesheet" type="text/css"
-	href="/resources/css/bootstrap/bootstrap.min.css">
+	href="/resources/css/bootstrap/bootstrap.css">
 </head>
 <body>
 	<div class="navbar navbar-inverse navbar-fixed-top">
@@ -38,45 +38,32 @@
 	<div class="row">
 		<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
 			<div class="list-group">
-				<a href="#" class="list-group-item active">Link</a>
+				<a id="driveCar" href="#" class="list-group-item active">Drive Car</a>
+				<a id="addCar" href="/newCar" class="list-group-item active">Add Car</a>
 			</div>
 		</div>
 		<!--/span-->
 
-		<div class="col-xs-12 col-sm-9">
+		<div id="cars" class="col-xs-12 col-sm-9">
 			<div class="row">
-				<div class="col-6 col-sm-6 col-lg-4">
-					<h2>Heading</h2>
-				</div>
-				<!--/span-->
-				<div class="col-6 col-sm-6 col-lg-4">
-					<h2>Heading</h2>
-				</div>
-				<!--/span-->
-				<div class="col-6 col-sm-6 col-lg-4">
-					<h2>Heading</h2>
-				</div>
-				<!--/span-->
-				<div class="col-6 col-sm-6 col-lg-4">
-					<h2>Heading</h2>
-				</div>
-				<!--/span-->
-				<div class="col-6 col-sm-6 col-lg-4">
-					<h2>Heading</h2>
-				</div>
-				<!--/span-->
-				<div class="col-6 col-sm-6 col-lg-4">
-					<h2>Heading</h2>
-				</div>
-				<!--/span-->
+				<c:forEach var="car" items="${lot}">
+					<div class="col-6 col-sm-6 col-lg-4 car">
+						<h2>${car.carId}</h2>
+						<img alt="" src="${car.image}">
+					</div>
+				</c:forEach>
 			</div>
 			<!--/row-->
 		</div>
 		<!--/span-->
 	</div>
 	<!--/row-->
+	<div id="popup">
+		HI
+		<a id="cancel" class="btn btn-primary btn-sm">Cancel</a>
+	</div>
 	<script src="/resources/js/jquery-1.11.0.min.js" type="text/javascript"></script>
-	<script src="/resources/js/bootstrap/bootstrap.min.js"
-		type="text/javascript"></script>
+	<script src="/resources/js/home.js" type="text/javascript"></script>
+	<script src="/resources/js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
 </body>
 </html>

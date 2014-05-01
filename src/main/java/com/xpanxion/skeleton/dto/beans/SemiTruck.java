@@ -34,6 +34,7 @@ public class SemiTruck extends Car {
         this.setPrice(50000);
         this.setFuel(FuelType.DIESEL);
         this.setFuelCapcity(50);
+        this.setImage(IMAGES + "semi.jpg");
         this.setCarType(CarType.SEMITRUCK);
     }
 }

@@ -1,3 +1,13 @@
 .page-header{
-	margin-top:"75px"
+	margin-top:75px;
+}
+
+.row .car img{
+	height: 175px;
+	width: 250px;
+}
+
+#cars{
+	background-color:#eee;
+	padding-bottom: 25px;
 }

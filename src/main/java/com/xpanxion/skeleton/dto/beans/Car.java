@@ -5,6 +5,8 @@ import com.xpanxion.skeleton.dto.beans.enums.FuelType;
 
 public abstract class Car {
 
+    protected static String IMAGES = "/resources/images/";
+
     private FuelType fuel;
     private int carId;
     private int lotId;
@@ -13,7 +15,7 @@ public abstract class Car {
     private int fuelUsedToDrive;
     private int price;
     private boolean isHybrid;
-
+    private String image;
     private boolean isOnSale;
 
     private CarType carType;
@@ -40,6 +42,10 @@ public abstract class Car {
 
     public int getFuelUsedToDrive() {
         return this.fuelUsedToDrive;
+    }
+
+    public String getImage() {
+        return this.image;
     }
 
     public int getLotId() {
@@ -101,6 +107,10 @@ public abstract class Car {
         if (isHybrid) {
             this.fuelUsedToDrive = this.fuelUsedToDrive - 2;
         }
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public void setLotId(int lotId) {

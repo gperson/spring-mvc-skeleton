@@ -5,7 +5,7 @@
 <title>Login Page</title>
 <link href="/resources/css/common.css" rel="stylesheet" type="text/css">
 <link href="/resources/css/login.css" rel="stylesheet" type="text/css">
-<link href="/resources/css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="/resources/css/bootstrap/bootstrap.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div class="navbar navbar-inverse navbar-fixed-top">

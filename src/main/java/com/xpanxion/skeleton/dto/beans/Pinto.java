@@ -35,6 +35,7 @@ public class Pinto extends Car {
 
     @Override
     public void initialize() {
+        this.setImage(IMAGES + "pinto.jpg");
         this.setCarType(CarType.PINTO);
     }
 }
