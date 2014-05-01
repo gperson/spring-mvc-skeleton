@@ -1,21 +1,38 @@
 package com.xpanxion.skeleton.dto.beans;
 
+import com.xpanxion.skeleton.dto.beans.enums.CarType;
+import com.xpanxion.skeleton.dto.beans.enums.FuelType;
+import com.xpanxion.skeleton.dto.entity.CarEntity;
+
 public class FunnyCar extends Car {
 
     public FunnyCar() {
-        super();
+        super.initialize();
         this.initialize();
     }
 
     public FunnyCar(boolean isHybrid) {
-        super(isHybrid);
+        super.initialize();
         this.initialize();
-        this.setFuelCapcity(12);
+        this.setHybrid(isHybrid);
+    }
+
+    public FunnyCar(CarEntity car) {
+        super.initialize();
+        this.initialize();
+        this.setCarId(car.getCarId());
+        this.setCarType(car.getCarType());
+        this.setFuelLevel(car.getFuelLevel());
+        this.setLotId(car.getLotId());
+        this.setPrice(car.getPrice());
+        this.setHybrid(car.isHybrid());
+        this.setOnSale(car.isOnSale());
     }
 
     @Override
     public void initialize() {
         this.setFuelUsedToDrive(14);
-        this.setFuel(Fuel.METHANOL);
+        this.setFuel(FuelType.METHANOL);
+        this.setCarType(CarType.FUNNYCAR);
     }
 }

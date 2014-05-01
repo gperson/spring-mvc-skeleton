@@ -6,9 +6,10 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.xpanxion.skeleton.service.TestService;
+import com.xpanxion.skeleton.service.LotService;
 
 /**
  * Controller for the Home Page.
@@ -21,7 +22,11 @@ public class HomeController {
 
     private static final String USER_NAME = "username";
     private static final String HOME_PAGE = "home";
-    private TestService testService;
+    private static final String LOT = "lot";
+
+    private LotService lotService;
+    // private CarService carService;
+
     private Authentication authentication;
 
     /**
@@ -29,26 +34,29 @@ public class HomeController {
      * 
      * @return the Model and View for the home page.
      */
-    @RequestMapping("/home")
+    @RequestMapping(value = "/" + HOME_PAGE, method = RequestMethod.GET)
     public ModelAndView getHomePage() {
         ModelAndView mAndV = new ModelAndView(HOME_PAGE);
-        mAndV.addObject("test", this.testService.getTestBeans());
-
         this.authentication = SecurityContextHolder.getContext().getAuthentication();
         mAndV.addObject(USER_NAME, this.authentication.getName());
-
+        mAndV.addObject(LOT, this.lotService.getLot());
         return mAndV;
     }
 
-    /**
-     * Sets the service for this controller
-     * 
-     * @param service
-     *            the service to use in this controller.
-     */
-    @Resource
-    public void setTestService(TestService service) {
-        this.testService = service;
+    @RequestMapping(value = "/" + HOME_PAGE, method = RequestMethod.POST)
+    public ModelAndView postHomePage() {
+        ModelAndView mAndV = new ModelAndView(HOME_PAGE);
+        // TODO this.carService.addOrSaveCar(lot, car, isHybrid);
+        return mAndV;
     }
 
+    // @Resource
+    // public void setCarService(CarService service) {
+    // this.carService = service;
+    // }
+
+    @Resource
+    public void setLotService(LotService service) {
+        this.lotService = service;
+    }
 }

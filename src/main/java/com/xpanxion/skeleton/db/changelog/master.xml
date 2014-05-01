@@ -7,4 +7,6 @@
 
 	<include file="com/xpanxion/skeleton/db/changelog/create-test-table-with-data.xml"/>
 	<include file="com/xpanxion/skeleton/db/changelog/create-user-info.xml"/>
+	<include file="com/xpanxion/skeleton/db/changelog/create-lot-table.xml"/>
+	<include file="com/xpanxion/skeleton/db/changelog/create-cars-table.xml"/>
 </databaseChangeLog> 

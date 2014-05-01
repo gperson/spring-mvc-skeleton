@@ -1,24 +1,32 @@
 package com.xpanxion.skeleton.dto.beans;
 
+import com.xpanxion.skeleton.dto.beans.enums.CarType;
+import com.xpanxion.skeleton.dto.beans.enums.FuelType;
+
 public abstract class Car {
 
-    private Fuel fuel;
+    private FuelType fuel;
+    private int carId;
+    private int lotId;
     private int fuelLevel;
     private int fuelCapcity;
     private int fuelUsedToDrive;
     private int price;
-    private boolean hasHybrid;
+    private boolean isHybrid;
 
-    public Car() {
-        this.initialize();
+    private boolean isOnSale;
+
+    private CarType carType;
+
+    public int getCarId() {
+        return this.carId;
     }
 
-    public Car(boolean hasHybrid) {
-        this.initialize();
-        this.setIsHybrid(hasHybrid);
+    public CarType getCarType() {
+        return this.carType;
     }
 
-    public Fuel getFuel() {
+    public FuelType getFuel() {
         return this.fuel;
     }
 
@@ -34,6 +42,10 @@ public abstract class Car {
         return this.fuelUsedToDrive;
     }
 
+    public int getLotId() {
+        return this.lotId;
+    }
+
     public int getPrice() {
         return this.price;
     }
@@ -47,15 +59,28 @@ public abstract class Car {
         this.setFuelUsedToDrive(3);
         this.setPrice(20000);
         this.setFuelLevel(this.fuelCapcity);
-        this.setFuel(Fuel.GAS);
-        this.setIsHybrid(false);
+        this.setFuel(FuelType.GAS);
+        this.setHybrid(false);
+        this.setOnSale(false);
     }
 
     public boolean isHybrid() {
-        return this.hasHybrid;
+        return this.isHybrid;
     }
 
-    public void setFuel(Fuel fuel) {
+    public boolean isOnSale() {
+        return this.isOnSale;
+    }
+
+    public void setCarId(int carId) {
+        this.carId = carId;
+    }
+
+    public void setCarType(CarType carType) {
+        this.carType = carType;
+    }
+
+    public void setFuel(FuelType fuel) {
         this.fuel = fuel;
     }
 
@@ -71,11 +96,28 @@ public abstract class Car {
         this.fuelUsedToDrive = fuelUsedToDrive;
     }
 
-    public void setIsHybrid(boolean hasHybrid) {
-        this.hasHybrid = hasHybrid;
+    public void setHybrid(boolean isHybrid) {
+        this.isHybrid = isHybrid;
+        if (isHybrid) {
+            this.fuelUsedToDrive = this.fuelUsedToDrive - 2;
+        }
+    }
+
+    public void setLotId(int lotId) {
+        this.lotId = lotId;
+    }
+
+    public void setOnSale(boolean isOnSale) {
+        this.isOnSale = isOnSale;
     }
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return ("CarId: " + this.carId + " LotId: " + this.lotId + " FuelType: " + this.fuel + " FuelLevel: " + this.fuelLevel + " FuelCapcity: " + this.fuelCapcity
+                + " FuelUsedToDrive: " + this.fuelUsedToDrive + " Price: " + this.price + " HasHybrid: " + this.isHybrid + " CarType: " + this.carType + " IsOnSale: " + this.isOnSale);
     }
 }
