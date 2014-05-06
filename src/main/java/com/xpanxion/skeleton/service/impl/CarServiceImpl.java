@@ -1,7 +1,6 @@
 package com.xpanxion.skeleton.service.impl;
 
-import javax.annotation.Resource;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,7 +18,9 @@ import com.xpanxion.skeleton.service.CarService;
 @Service
 public class CarServiceImpl implements CarService {
 
+    @Autowired
     private CarDao carDao;
+
     public static int MAX_CARLOT_SIZE = 25;
 
     @Override
@@ -38,10 +39,5 @@ public class CarServiceImpl implements CarService {
             System.out.println("Adding: " + newCar.toString());
             this.carDao.addCar(new CarEntity(newCar));
         }
-    }
-
-    @Resource
-    public void setCarDao(CarDao doa) {
-        this.carDao = doa;
     }
 }

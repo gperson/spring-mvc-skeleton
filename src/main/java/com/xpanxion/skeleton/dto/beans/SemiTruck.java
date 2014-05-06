@@ -6,6 +6,8 @@ import com.xpanxion.skeleton.dto.entity.CarEntity;
 
 public class SemiTruck extends Car {
 
+    private final String IMAGE_FILE = "semi.jpg";
+
     public SemiTruck() {
         super.initialize();
         this.initialize();
@@ -34,7 +36,7 @@ public class SemiTruck extends Car {
         this.setPrice(50000);
         this.setFuel(FuelType.DIESEL);
         this.setFuelCapcity(50);
-        this.setImage(IMAGES + "semi.jpg");
+        this.setImage(IMAGES + this.IMAGE_FILE);
         this.setCarType(CarType.SEMITRUCK);
     }
 }

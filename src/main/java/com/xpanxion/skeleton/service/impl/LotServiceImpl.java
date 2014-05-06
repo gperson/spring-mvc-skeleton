@@ -1,7 +1,6 @@
 package com.xpanxion.skeleton.service.impl;
 
-import javax.annotation.Resource;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,15 +12,11 @@ import com.xpanxion.skeleton.service.LotService;
 @Service
 public class LotServiceImpl implements LotService {
 
+    @Autowired
     private LotDao lotDao;
 
     @Override
     public Lot getLot() {
         return new Lot(this.lotDao.getLot());
-    }
-
-    @Resource
-    public void setLotDao(LotDao doa) {
-        this.lotDao = doa;
     }
 }

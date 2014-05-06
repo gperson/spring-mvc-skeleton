@@ -6,6 +6,8 @@ import com.xpanxion.skeleton.dto.entity.CarEntity;
 
 public class FunnyCar extends Car {
 
+    private final String IMAGE_FILE = "funny.jpg";
+
     public FunnyCar() {
         super.initialize();
         this.initialize();
@@ -32,7 +34,7 @@ public class FunnyCar extends Car {
     @Override
     public void initialize() {
         this.setFuelUsedToDrive(14);
-        this.setImage(IMAGES + "funny.jpg");
+        this.setImage(IMAGES + this.IMAGE_FILE);
         this.setFuel(FuelType.METHANOL);
         this.setCarType(CarType.FUNNYCAR);
     }

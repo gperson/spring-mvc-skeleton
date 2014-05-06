@@ -5,6 +5,8 @@ import com.xpanxion.skeleton.dto.entity.CarEntity;
 
 public class Pinto extends Car {
 
+    private final String IMAGE_FILE = "pinto.jpg";
+
     public Pinto() {
         super.initialize();
         this.initialize();
@@ -35,7 +37,7 @@ public class Pinto extends Car {
 
     @Override
     public void initialize() {
-        this.setImage(IMAGES + "pinto.jpg");
+        this.setImage(IMAGES + this.IMAGE_FILE);
         this.setCarType(CarType.PINTO);
     }
 }

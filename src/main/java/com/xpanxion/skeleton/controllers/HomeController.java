@@ -2,8 +2,7 @@ package com.xpanxion.skeleton.controllers;
 
 import java.util.List;
 
-import javax.annotation.Resource;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -27,6 +26,7 @@ public class HomeController {
     private static final String HOME_PAGE = "home";
     private static final String LOT = "lot";
 
+    @Autowired
     private LotService lotService;
 
     private Authentication authentication;
@@ -44,10 +44,5 @@ public class HomeController {
         List<Car> cars = this.lotService.getLot().getCars();
         mAndV.addObject(LOT, cars);
         return mAndV;
-    }
-
-    @Resource
-    public void setLotService(LotService service) {
-        this.lotService = service;
     }
 }
