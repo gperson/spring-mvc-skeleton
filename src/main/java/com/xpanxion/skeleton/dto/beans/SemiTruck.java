@@ -13,10 +13,11 @@ public class SemiTruck extends Car {
         this.initialize();
     }
 
-    public SemiTruck(boolean hasHybrid) {
+    public SemiTruck(boolean hasHybrid, boolean isOnSale) {
         super.initialize();
         this.initialize();
         this.setHybrid(hasHybrid);
+        this.setOnSale(isOnSale);
     }
 
     public SemiTruck(CarEntity car) {

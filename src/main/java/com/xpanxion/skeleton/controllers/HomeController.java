@@ -23,7 +23,8 @@ import com.xpanxion.skeleton.service.LotService;
 public class HomeController {
 
     private static final String USER_NAME = "username";
-    private static final String HOME_PAGE = "home";
+    private static final String HOME_PAGE = "common.home";
+    private static final String HOME_URL = "home";
     private static final String LOT = "lot";
 
     @Autowired
@@ -36,7 +37,7 @@ public class HomeController {
      * 
      * @return the Model and View for the home page.
      */
-    @RequestMapping(value = "/" + HOME_PAGE, method = RequestMethod.GET)
+    @RequestMapping(value = "/" + HOME_URL, method = RequestMethod.GET)
     public ModelAndView getHomePage() {
         ModelAndView mAndV = new ModelAndView(HOME_PAGE);
         this.authentication = SecurityContextHolder.getContext().getAuthentication();

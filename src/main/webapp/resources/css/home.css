@@ -2,9 +2,10 @@
 	margin-top:75px;
 }
 
-.row .car img{
+.row .car a img{
 	height: 175px;
 	width: 250px;
+	margin-top: 25px;
 }
 
 #cars{

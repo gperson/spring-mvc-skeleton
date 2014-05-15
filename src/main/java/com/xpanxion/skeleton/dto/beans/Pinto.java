@@ -12,10 +12,11 @@ public class Pinto extends Car {
         this.initialize();
     }
 
-    public Pinto(boolean hasHybrid) {
+    public Pinto(boolean hasHybrid, boolean isOnSale) {
         super.initialize();
         this.initialize();
         this.setHybrid(hasHybrid);
+        this.setOnSale(isOnSale);
     }
 
     public Pinto(CarEntity car) {

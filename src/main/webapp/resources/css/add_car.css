@@ -1,0 +1,7 @@
+button{
+	float: right;
+}
+
+.row > div > h3{
+	text-decoration: underline;
+}

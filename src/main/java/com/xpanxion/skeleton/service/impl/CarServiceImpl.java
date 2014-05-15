@@ -24,20 +24,22 @@ public class CarServiceImpl implements CarService {
     public static int MAX_CARLOT_SIZE = 25;
 
     @Override
-    public void addOrSaveCar(Lot lot, CarType car, boolean isHybrid) {
-        System.out.println("Current lot size: " + lot.getCars().size());
+    public boolean addOrSaveCar(Lot lot, CarType car, int fuelLevel, boolean isHybrid, boolean isOnSale) {
+        boolean success = false;
         if (lot.getCars().size() < MAX_CARLOT_SIZE) {
             Car newCar;
             if (car == CarType.FUNNYCAR) {
-                newCar = new FunnyCar(isHybrid);
+                newCar = new FunnyCar(isHybrid, isOnSale);
             } else if (car == CarType.PINTO) {
-                newCar = new Pinto(isHybrid);
+                newCar = new Pinto(isHybrid, isOnSale);
             } else {
-                newCar = new SemiTruck(isHybrid);
+                newCar = new SemiTruck(isHybrid, isOnSale);
             }
             newCar.setLotId(lot.getId());
-            System.out.println("Adding: " + newCar.toString());
+            newCar.setFuelLevel(fuelLevel);
             this.carDao.addCar(new CarEntity(newCar));
+            success = true;
         }
+        return success;
     }
 }

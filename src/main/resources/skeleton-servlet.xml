@@ -2,7 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
-	xmlns:mvc="http://www.springframework.org/schema/mvc" 
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xsi:schemaLocation="
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
@@ -16,10 +16,15 @@
 	<context:component-scan base-package="com.xpanxion.skeleton" />
 
 	<mvc:resources mapping="/resources/**" location="/resources/" />
- 
+
 	<mvc:annotation-driven />
 
-	<bean id="viewResolver"
+	<bean id="urlViewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver" p:order="0">
+		<property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView" />
+	</bean>
+
+	<bean id="internalViewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
 			<value>/jsp/</value>
@@ -42,5 +47,14 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="changeLog"
 			value="classpath:com/xpanxion/skeleton/db/changelog/master.xml" />
+	</bean>
+
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/resources/tiles/tiles.xml</value>
+			</list>
+		</property>
 	</bean>
 </beans>

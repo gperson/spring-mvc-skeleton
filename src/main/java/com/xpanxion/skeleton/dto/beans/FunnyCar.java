@@ -13,10 +13,11 @@ public class FunnyCar extends Car {
         this.initialize();
     }
 
-    public FunnyCar(boolean isHybrid) {
+    public FunnyCar(boolean isHybrid, boolean isOnSale) {
         super.initialize();
         this.initialize();
         this.setHybrid(isHybrid);
+        this.setOnSale(isOnSale);
     }
 
     public FunnyCar(CarEntity car) {
