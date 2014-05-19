@@ -2,12 +2,14 @@ package com.xpanxion.skeleton.controllers;
 
 import javax.annotation.Resource;
 
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.xpanxion.skeleton.dto.beans.UserBean;
 import com.xpanxion.skeleton.service.UserService;
 
 /**
@@ -34,11 +36,11 @@ public class ManageUsersController {
     @RequestMapping(value = "/manage_users", method = RequestMethod.GET)
     public ModelAndView login(ModelMap model) {
         ModelAndView mAndV = new ModelAndView(MANAGE_USERS_PAGE);
-        // UserBean user = this.userService.getUserBean(SecurityContextHolder.getContext().getAuthentication().getName());
-        // mAndV.addObject(USERNAME_FIELD, user.getUsername());
-        // mAndV.addObject(PASSWORD_FIELD, user.getPassword());
-        // mAndV.addObject(AUTHORITY_FIELD, user.getAuthority());
-        // mAndV.addObject(ENABLED_FIELD, user.isEnabled());
+        UserBean user = this.userService.getUserBean(SecurityContextHolder.getContext().getAuthentication().getName());
+        mAndV.addObject(USERNAME_FIELD, user.getUsername());
+        mAndV.addObject(PASSWORD_FIELD, user.getPassword());
+        mAndV.addObject(AUTHORITY_FIELD, user.getAuthority());
+        mAndV.addObject(ENABLED_FIELD, user.isEnabled());
         return mAndV;
     }
 

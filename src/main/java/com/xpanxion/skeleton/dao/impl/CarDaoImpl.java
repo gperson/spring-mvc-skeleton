@@ -26,13 +26,6 @@ public class CarDaoImpl implements CarDao {
 
     @Override
     public void udpateCar(CarEntity car) {
-        // // TODO Auto-generated method stub
-        // Query query = this.sessionFactory.openSession().getNamedQuery(CarEntity.UPDATE_CAR);
-        // query.setParameter(CarEntity.UPDATE_CARID_PARAM, car.getCarId());
-        // query.setParameter(CarEntity.UPDATE_FUELLEVEL_PARAM, car.getFuelLevel());
-        // query.setParameter(CarEntity.UPDATE_HYBRID_PARAM, car.isHybrid());
-        // query.setParameter(CarEntity.UPDATE_ONSALE_PARAM, car.isOnSale());
-        // query.setParameter(CarEntity.UPDATE_PRICE_PARAM, car.getPrice());
         Session sf = this.sessionFactory.openSession();
         Transaction transaction = sf.beginTransaction();
         sf.update(car);
