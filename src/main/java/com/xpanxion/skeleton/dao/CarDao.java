@@ -11,4 +11,12 @@ public interface CarDao {
      *            a car
      */
     public void addCar(CarEntity car);
+
+    /**
+     * Update a car entity
+     * 
+     * @param car
+     *            a car
+     */
+    public void udpateCar(CarEntity car);
 }

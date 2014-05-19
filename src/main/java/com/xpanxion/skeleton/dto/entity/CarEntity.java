@@ -7,6 +7,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 import com.xpanxion.skeleton.dto.beans.Car;
@@ -14,7 +15,15 @@ import com.xpanxion.skeleton.dto.beans.enums.CarType;
 
 @Entity
 @Table(name = "cars")
+@NamedQuery(name = CarEntity.UPDATE_CAR, query = "update CarEntity set fuelLevel = :fuelLevel, price = :price, isHybrid = :isHybrid, isOnSale = :isOnSale where carId = :carId")
 public class CarEntity {
+
+    public static final String UPDATE_CAR = "lot.update";
+    public static final String UPDATE_FUELLEVEL_PARAM = "";
+    public static final String UPDATE_PRICE_PARAM = "";
+    public static final String UPDATE_HYBRID_PARAM = "";
+    public static final String UPDATE_ONSALE_PARAM = "";
+    public static final String UPDATE_CARID_PARAM = "";
 
     @Id
     @Column
@@ -51,6 +60,7 @@ public class CarEntity {
         this.isOnSale = car.isOnSale();
         this.carType = car.getCarType();
         this.lotId = car.getLotId();
+        this.carId = car.getCarId();
     }
 
     public int getCarId() {

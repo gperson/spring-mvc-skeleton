@@ -18,10 +18,20 @@
 		<put-attribute name="body" value="/resources/jsp/body_home.jsp" />
 	</definition>
 	
+	<definition name="common.inventory" extends="common">
+		<put-attribute name="Inventory" value="Home"/>
+		<put-attribute name="body" value="/resources/jsp/body_inventory.jsp" />
+	</definition>
+	
 	<definition name="common.addCar" extends="common">
 		<put-attribute name="specialStyleSheet" value="/resources/css/add_car.css"/>
 		<put-attribute name="title" value="Add Car"/>
 		<put-attribute name="body" value="/resources/jsp/body_view_car.jsp" />
 		<put-attribute name="specialScript" value="/resources/js/veiw_car.js"/>
+	</definition>
+	
+	<definition name="common.driveCar" extends="common">
+		<put-attribute name="title" value="Drive Car"/>
+		<put-attribute name="body" value="/resources/jsp/body_drive_car.jsp" />
 	</definition>
 </tiles-definitions>

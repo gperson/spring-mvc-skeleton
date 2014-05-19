@@ -19,6 +19,7 @@ public class AddCarController {
     public static final String NEW_CAR_URL = "addCar";
     public static final String MESSAGE = "message";
     public static final String MESSAGE_TYPE = "alertType";
+    public static final String CAR_FORM = "carForm";
 
     @Autowired
     public CarService carService;
@@ -29,7 +30,7 @@ public class AddCarController {
     @RequestMapping(value = "/" + NEW_CAR_URL, method = RequestMethod.GET)
     public ModelAndView getNewCarPage() {
         ModelAndView mAndV = new ModelAndView(NEW_CAR_PAGE);
-        mAndV.addObject("carForm", new CarForm());
+        mAndV.addObject(CAR_FORM, new CarForm());
         return mAndV;
     }
 

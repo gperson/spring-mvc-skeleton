@@ -33,6 +33,15 @@ public class Lot {
         this.id = lot.getId();
     }
 
+    public Car getCar(int carId) {
+        for (Car car : this.cars) {
+            if (car.getCarId() == carId) {
+                return car;
+            }
+        }
+        return null;
+    }
+
     public List<Car> getCars() {
         return this.cars;
     }

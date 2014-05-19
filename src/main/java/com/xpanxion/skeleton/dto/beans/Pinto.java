@@ -32,8 +32,12 @@ public class Pinto extends Car {
     }
 
     @Override
-    public int getSalePrice() {
-        return (int) (this.getPrice() * .75);
+    public int getPrice() {
+        if (this.isOnSale()) {
+            return (int) (this.price * .75);
+        } else {
+            return super.getPrice();
+        }
     }
 
     @Override

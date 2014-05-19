@@ -42,4 +42,15 @@ public class CarServiceImpl implements CarService {
         }
         return success;
     }
+
+    @Override
+    public boolean driveCar(Car car) {
+        if (car.getFuelLevel() < car.getFuelUsedToDrive()) {
+            return false;
+        } else {
+            car.setFuelLevel(car.getFuelLevel() - car.getFuelUsedToDrive());
+            this.carDao.udpateCar(new CarEntity(car));
+            return true;
+        }
+    }
 }

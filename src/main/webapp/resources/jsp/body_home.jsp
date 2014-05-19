@@ -8,8 +8,9 @@
 <div class="row">				
 	<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
 		<div class="list-group">
-			<a id="driveCar" href="#" class="list-group-item">Drive
-				Car</a> <a id="addCar" href="/addCar" class="list-group-item">Add
+			<a id="driveCar" href="/driveCar" class="list-group-item">Drive
+				Car</a> 
+			<a id="addCar" href="/addCar" class="list-group-item">Add
 				Car</a>
 		</div>
 	</div>

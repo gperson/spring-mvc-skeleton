@@ -10,4 +10,5 @@ public interface LotDao {
      * @return the lot entity
      */
     public LotEntity getLot();
+
 }

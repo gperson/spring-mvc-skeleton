@@ -13,7 +13,7 @@ public abstract class Car {
     private int fuelLevel;
     private int fuelCapcity;
     private int fuelUsedToDrive;
-    private int price;
+    protected int price;
     private boolean isHybrid;
     private String image;
     private boolean isOnSale;
@@ -53,11 +53,11 @@ public abstract class Car {
     }
 
     public int getPrice() {
-        return this.price;
-    }
-
-    public int getSalePrice() {
-        return (int) (this.price * .8);
+        if (this.isOnSale) {
+            return (int) (this.price * .8);
+        } else {
+            return this.price;
+        }
     }
 
     public void initialize() {
