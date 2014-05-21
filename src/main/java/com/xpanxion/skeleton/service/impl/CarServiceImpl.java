@@ -24,8 +24,7 @@ public class CarServiceImpl implements CarService {
     public static int MAX_CARLOT_SIZE = 25;
 
     @Override
-    public boolean addOrSaveCar(Lot lot, CarType car, int fuelLevel, boolean isHybrid, boolean isOnSale) {
-        boolean success = false;
+    public Car addCar(Lot lot, CarType car, int fuelLevel, boolean isHybrid, boolean isOnSale) {
         if (lot.getCars().size() < MAX_CARLOT_SIZE) {
             Car newCar;
             if (car == CarType.FUNNYCAR) {
@@ -37,10 +36,10 @@ public class CarServiceImpl implements CarService {
             }
             newCar.setLotId(lot.getId());
             newCar.setFuelLevel(fuelLevel);
-            this.carDao.addCar(new CarEntity(newCar));
-            success = true;
+            newCar.setCarId(this.carDao.addCar(new CarEntity(newCar)));
+            return newCar;
         }
-        return success;
+        return null;
     }
 
     @Override
@@ -52,5 +51,19 @@ public class CarServiceImpl implements CarService {
             this.carDao.udpateCar(new CarEntity(car));
             return true;
         }
+    }
+
+    @Override
+    public void updateCar(Car car) {
+        this.carDao.udpateCar(new CarEntity(car));
+    }
+
+    @Override
+    public Car updateCar(Lot lot, String carId, int fuelLevel, boolean onSale) {
+        Car car = lot.getCar(Integer.parseInt(carId));
+        car.setFuelLevel(fuelLevel);
+        car.setOnSale(onSale);
+        this.carDao.udpateCar(new CarEntity(car));
+        return car;
     }
 }

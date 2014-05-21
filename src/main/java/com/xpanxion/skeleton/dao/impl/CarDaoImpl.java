@@ -16,12 +16,14 @@ public class CarDaoImpl implements CarDao {
     private SessionFactory sessionFactory;
 
     @Override
-    public void addCar(CarEntity car) {
+    public int addCar(CarEntity car) {
         Session sf = this.sessionFactory.openSession();
         Transaction transaction = sf.beginTransaction();
-        sf.save(car);
+        int id = (Integer) sf.save(car);
+        System.out.println("Created: " + id);
         transaction.commit();
         sf.close();
+        return id;
     }
 
     @Override

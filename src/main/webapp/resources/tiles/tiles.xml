@@ -9,6 +9,7 @@
 		<put-attribute name="header" value="/resources/jsp/header.jsp" />
 		<put-attribute name="body" value="/resources/jsp/body.jsp" />
 		<put-attribute name="footer" value="/resources/jsp/footer.jsp"/>
+		<put-attribute name="specialScriptCommon" value=""/>
 		<put-attribute name="specialScript" value=""/>
 	</definition>
 
@@ -27,7 +28,16 @@
 		<put-attribute name="specialStyleSheet" value="/resources/css/add_car.css"/>
 		<put-attribute name="title" value="Add Car"/>
 		<put-attribute name="body" value="/resources/jsp/body_view_car.jsp" />
-		<put-attribute name="specialScript" value="/resources/js/veiw_car.js"/>
+		<put-attribute name="specialScriptCommon" value="/resources/js/view_car.js"/>
+		<put-attribute name="specialScript" value="/resources/js/add_car.js"/>		
+	</definition>
+	
+	<definition name="common.viewCar" extends="common">
+		<put-attribute name="specialStyleSheet" value="/resources/css/add_car.css"/>
+		<put-attribute name="title" value="View Car"/>
+		<put-attribute name="body" value="/resources/jsp/body_view_car.jsp" />
+		<put-attribute name="specialScriptCommon" value="/resources/js/view_car.js"/>
+		<put-attribute name="specialScript" value="/resources/js/edit_car.js"/>
 	</definition>
 	
 	<definition name="common.driveCar" extends="common">

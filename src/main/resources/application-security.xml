@@ -10,7 +10,6 @@
 	<security:http pattern="/login" security="none" />
 	<security:http pattern="/logout" security="none" />
 	<security:http pattern="/resources/**" security="none" />
-	<security:http pattern="/manage_users" security="none" />
 
 	<security:http>
 		<security:intercept-url pattern="/**" access="ROLE_USER" />

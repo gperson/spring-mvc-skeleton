@@ -18,5 +18,6 @@
 </body>
 <script src="/resources/js/jquery-1.11.0.min.js" type="text/javascript"></script>
 <script src="/resources/js/bootstrap/bootstrap.min.js"	type="text/javascript"></script>
+<script src="<tiles:getAsString name='specialScriptCommon'/>"	type="text/javascript"></script>
 <script src="<tiles:getAsString name='specialScript'/>"	type="text/javascript"></script>
 </html>

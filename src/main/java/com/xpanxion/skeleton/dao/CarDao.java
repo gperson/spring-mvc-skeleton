@@ -10,7 +10,7 @@ public interface CarDao {
      * @param car
      *            a car
      */
-    public void addCar(CarEntity car);
+    public int addCar(CarEntity car);
 
     /**
      * Update a car entity

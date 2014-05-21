@@ -6,7 +6,11 @@ import com.xpanxion.skeleton.dto.beans.enums.CarType;
 
 public interface CarService {
 
-    public boolean addOrSaveCar(Lot lot, CarType car, int fuelLevel, boolean isHybrid, boolean isOnSale);
+    public Car addCar(Lot lot, CarType car, int fuelLevel, boolean isHybrid, boolean isOnSale);
 
     public boolean driveCar(Car car);
+
+    public void updateCar(Car car);
+
+    public Car updateCar(Lot lot, String carId, int fuelLevel, boolean onSale);
 }

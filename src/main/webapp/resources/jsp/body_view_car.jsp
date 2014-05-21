@@ -4,7 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <div class="container">
 	<div class="page-header">
-		<h1>Add Car</h1>
+		<h1>${title}</h1>
 	</div>
 </div>
 <div id="container">
@@ -17,15 +17,11 @@
 			<div>
 				<form:form commandName="carForm" method="POST"
 					class="form-horizontal">
-					<form:errors path="*" cssClass="errorblock" element="div" />
 					<div class="form-group">
 						<label for="carType" class="col-sm-3">Car Type:</label>
 						<div class="col-sm-5">
 							<form:select id="carType" class="form-control" path="carType">
-								<option value="" disabled selected>Select Type</option>
-								<option value="pinto">Pinto</option>
-								<option value="funny">Funny Car</option>
-								<option value="semi">Semi Truck</option>
+								<form:options id="options" path="options" items="${optionsMap}" />
 							</form:select>
 						</div>
 					</div>
@@ -62,7 +58,7 @@
 					</div>
 					<div class="form-group">
 						<div class="col-sm-offset-3 col-sm-5">
-							<form:button type="submit" class="btn btn-large btn-success">Create</form:button>
+							<form:button type="submit" class="btn btn-large btn-success">Submit</form:button>
 						</div>
 					</div>
 				</form:form>
