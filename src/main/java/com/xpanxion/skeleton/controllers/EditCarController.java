@@ -43,19 +43,20 @@ public class EditCarController {
     }
 
     @RequestMapping(value = "/" + VIEW_CAR_URL, method = RequestMethod.POST)
-    public ModelAndView postNewCarPage(@ModelAttribute CarForm carForm, @RequestParam(value = PARAMETER_CAR_ID, required = true) String id) {
+    public ModelAndView postEditCarPage(@ModelAttribute CarForm carForm, @RequestParam(value = PARAMETER_CAR_ID, required = true) String id) {
         ModelAndView mAndV = new ModelAndView(VIEW_CAR_PAGE);
         carForm.setCarId(id);
         Car car = this.carService.updateCar(this.lotService.getLot(), carForm.getCarId(), carForm.getFuelLevel(), carForm.getOnSale());
         if (car != null) {
             mAndV.addObject(AddCarController.MESSAGE, "Car updated!");
             mAndV.addObject(AddCarController.MESSAGE_TYPE, "alert-success");
+            mAndV.addObject(AddCarController.PAGE_TITLE, "Editing Car, " + car.getCarId());
         } else {
             mAndV.addObject(AddCarController.MESSAGE, "Car not updated!");
             mAndV.addObject(AddCarController.MESSAGE_TYPE, "alert-danger alert-error");
+            mAndV.addObject(AddCarController.PAGE_TITLE, "Editing Car");
         }
         mAndV.addObject(AddCarController.OPTIONS, carForm.getOptions());
-        mAndV.addObject(AddCarController.PAGE_TITLE, "Editing Car, " + car.getCarId());
         return mAndV;
     }
 }

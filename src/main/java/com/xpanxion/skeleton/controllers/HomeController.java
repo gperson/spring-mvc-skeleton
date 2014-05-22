@@ -22,10 +22,10 @@ import com.xpanxion.skeleton.service.LotService;
 @Controller
 public class HomeController {
 
-    private static final String USER_NAME = "username";
+    public static final String USER_NAME = "username";
     private static final String HOME_PAGE = "common.home";
     private static final String HOME_URL = "home";
-    private static final String LOT = "lot";
+    public static final String LOT = "lot";
 
     @Autowired
     private LotService lotService;

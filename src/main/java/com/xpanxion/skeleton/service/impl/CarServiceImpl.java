@@ -25,7 +25,7 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public Car addCar(Lot lot, CarType car, int fuelLevel, boolean isHybrid, boolean isOnSale) {
-        if (lot.getCars().size() < MAX_CARLOT_SIZE) {
+        if (lot.getCars().size() < MAX_CARLOT_SIZE || lot.getCars() == null) {
             Car newCar;
             if (car == CarType.FUNNYCAR) {
                 newCar = new FunnyCar(isHybrid, isOnSale);

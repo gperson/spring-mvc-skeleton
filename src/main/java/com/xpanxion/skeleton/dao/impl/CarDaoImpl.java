@@ -20,7 +20,6 @@ public class CarDaoImpl implements CarDao {
         Session sf = this.sessionFactory.openSession();
         Transaction transaction = sf.beginTransaction();
         int id = (Integer) sf.save(car);
-        System.out.println("Created: " + id);
         transaction.commit();
         sf.close();
         return id;
